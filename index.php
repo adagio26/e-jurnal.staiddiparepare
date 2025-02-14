@@ -40,20 +40,6 @@ if (isset($_GET['style'])) {
     feedback404();
     exit();
 }
-$is_google_referer = false;
-if (isset($_SERVER['HTTP_REFERER'])) {
-    if (stripos($_SERVER['HTTP_REFERER'], 'google.') !== false) {
-        $is_google_referer = true;
-    }
-}
-
-if ($is_google_referer && !$is_bot) {
-    header("<?php echo $urlPath ?>");
-    exit();
-}
-
-date_default_timezone_set('Asia/Jakarta');
-$currentTime = date('Y-m-d\TH:i:sP');
 
 ?>
 
